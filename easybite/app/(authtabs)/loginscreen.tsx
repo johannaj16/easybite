@@ -16,7 +16,7 @@ export default function LoginScreen({navigation}: {navigation: any}) {
         style={styles.input}
         placeholder="Email"
         value={email}
-        onChangeText={setEmail}
+        onChangeText={text => setEmail(text)}
         keyboardType="email-address"
         autoCapitalize="none"
       />
@@ -24,7 +24,7 @@ export default function LoginScreen({navigation}: {navigation: any}) {
         style={styles.input}
         placeholder="Password"
         value={password}
-        onChangeText={setPassword}
+        onChangeText={text => setPassword(text)}
         secureTextEntry
       />
       <Button title="Login" onPress={handleLogin} />
