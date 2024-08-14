@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "541858944467",
+    "project_id": "easybite-97cfc",
+    "storage_bucket": "easybite-97cfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541858944467:android:a1719d2063fa6ddbd20b26",
+        "android_client_info": {
+          "package_name": "com.easybite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlD4W5htTE_Ou-rBjY4CMAX9UMoO6IqeQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
