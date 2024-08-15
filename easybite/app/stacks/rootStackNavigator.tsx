@@ -6,7 +6,7 @@ import AppStackNavigator from './appStackNavigator';
 const Stack = createStackNavigator();
 
 export default function RootStackNavigator() {
-  const isLoggedIn = true; // placeholderr
+  const isLoggedIn = false; // placeholderr
 
   return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>

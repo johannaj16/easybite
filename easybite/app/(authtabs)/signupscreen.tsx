@@ -11,8 +11,7 @@ export default function SignupScreen({navigation}: {navigation: any}) {
       alert("Passwords don't match!");
       return;
     }
-    alert('Account created!');
-    navigation.navigate('Login');
+    navigation.navigate('Details');
   };
 
   return (
