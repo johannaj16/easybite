@@ -1,36 +1,62 @@
-import { Image, Text, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '../../components/HelloWave';
+import { View, Image, Text, StyleSheet, TextInput, Platform } from 'react-native';
+import React, { useState } from 'react';
 import ParallaxScrollView from '../../components/ParallaxScrollView';
 import { ThemedText } from '../../components/ThemedText';
 import { ThemedView } from '../../components/ThemedView';
+import CustomButton from '../../components/ProfilePage/informationButton';
 
 export default function HomeScreen() {
+  const [name, setName] = useState('');
+  const [submittedName, setSubmittedName] = useState('');
+
+  const handleNameChange = (text: string) => {
+    setName(text);
+  };
+
+  const handleSubmit = () => {
+    setSubmittedName(name);
+  };
   return (
     <ParallaxScrollView
-    headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+    headerBackgroundColor={{ light: '#7CA982', dark: '#7CA982' }}
     headerImage={
-      <Image
-        source={require('../../assets/images/partial-react-logo.png')}
-        style={styles.reactLogo}
-      />
+      <View style={styles.imageContainer} >
+        <View style={styles.circle}/>
+
+
+        <Image
+          source={require('../../components/ProfilePage/images/ramen.png')}
+          style={styles.ramenPhoto}
+        />
+      </View>
     }>
-    <ThemedView style={styles.titleContainer}>
-      <ThemedText type="title">profile page!</ThemedText>
-      <HelloWave />
-    </ThemedView>
-    <ThemedView style={styles.stepContainer}>
-      <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-      <ThemedText>
-        Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-        Press{' '}
-        <ThemedText type="defaultSemiBold">
-          {Platform.select({ ios: 'cmd + d', android: 'cmd + m' })}
-        </ThemedText>{' '}
-        to open developer tools.
-      </ThemedText>
-    </ThemedView>
-  </ParallaxScrollView>
+
+    <View style={styles.inputContainer}>
+      <TextInput
+        style={styles.textInput}
+        placeholder="First Name"
+        value={name}
+        onChangeText={handleNameChange}
+      />
+      <TextInput
+        style={styles.textInput}
+        placeholder="Last Name"
+        value={name}
+        onChangeText={handleNameChange}
+      />
+      <TextInput
+        style={styles.textInput}
+        placeholder="Email"
+        value={name}
+        onChangeText={handleNameChange}
+      />
+      <ThemedText style={styles.stepContainer} />
+      <CustomButton title="Change Password" onPress={handleSubmit} />
+      <ThemedText style={styles.stepContainer} />
+      <CustomButton title="Log Out" onPress={handleSubmit} />
+      {submittedName ? <Text style={styles.nameDisplay}>Logging Out, {submittedName}!</Text> : null}
+    </View>
+    </ParallaxScrollView>
   );
 }
 
@@ -40,15 +66,48 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 8,
   },
+  imageContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    left: 0,
+    right: 0,
+    top: 25,
+    bottom: 0,
+    margin: 'auto',
+  },
   stepContainer: {
     gap: 8,
     marginBottom: 8,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
+  circle: {
+    width: 169,
+    height: 169,
+    backgroundColor: '#243E36',
+    zIndex: 0,
+    borderRadius: 84.5,
+    position: 'absolute'
+  },
+  ramenPhoto: {
+    height: 111,
+    width: 123,
     position: 'absolute',
+
+  },
+  inputContainer: {
+    margin: 20,
+    alignItems: 'center',
+  },
+  textInput: {
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    width: '80%',
+    paddingHorizontal: 10,
+    marginBottom: 10,
+  },
+  nameDisplay: {
+    marginTop: 10,
+    fontSize: 18,
+    color: '#333',
   },
 });
