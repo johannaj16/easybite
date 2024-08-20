@@ -4,11 +4,14 @@ import React from 'react';
 import { TabBarIcon } from '../../components/navigation/TabBarIcon';
 import { Colors } from '../../constants/Colors';
 import { useColorScheme } from '../../hooks/useColorScheme';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 
 export default function AppStackNavigator() {
   const colorScheme = useColorScheme();
 
   return (
+
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,

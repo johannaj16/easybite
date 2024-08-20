@@ -4,6 +4,7 @@ import SignupScreen from  '../(authtabs)/signupscreen';
 import LoginScreen from  '../(authtabs)/loginscreen';
 import DetailsScreen from  '../(authtabs)/detailsscreen';
 import PreferencesScreen from  '../(authtabs)/preferencesscreen';
+import FoodPreferencesScreen from  '../(authtabs)/foodpreferencesscreen';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,11 @@ export default function AuthStackNavigator() {
       <Stack.Screen
         name="Preferences"
         component={PreferencesScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="FoodPreferences"
+        component={FoodPreferencesScreen}
         options={{ headerShown: false }}
       />
       

@@ -60,7 +60,7 @@ export default function DetailsScreen({ navigation }: { navigation: any }) {
       {birthDate instanceof Date ? `Selected Birth Date: ${birthDate.toLocaleDateString()}` : 'No date selected'}
         </Text>
 
-      <Button title="Create Account" onPress={() => navigation.navigate('Preferences')} />
+      <Button title="Create Account" onPress={() => navigation.navigate('Preferences') } />
     </View>
   );
 }
